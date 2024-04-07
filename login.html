@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .login-page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #F6F2FF;
+    }
+
+    .login-page .logo {
+      display: flex;
+      font-size: 20px;
+      font-weight: bold;
+      color: #7562ba;
+      margin-top: .5%;
+      margin-right: 1%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .login-page__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 400px;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 10px;
+    }
+
+    .login-page__title {
+      margin-bottom: 20px;
+      color: #7562ba;
+    }
+
+    .login-page__form {
+      width: 100%;
+    }
+
+    .login-page__form-field {
+      margin-bottom: 20px;
+    }
+
+    .login-page__form-field label {
+      display: block;
+      font-weight: bold;
+      color: #0d091a;
+    }
+
+    .login-page__form-field input[type="text"],
+    .login-page__form-field input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .login-page__form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #563fa7;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .login-page__form button:hover {
+      background-color: #a28fe7;
+    }
+
+    .login-page__signup {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #2f4f4f;
+    }
+
+    .login-page__signup a {
+      color: #2f4f4f;
+      text-decoration: underline;
+    }
+
+    .login-page__signup a:hover {
+      color: #a28fe7;
+    }
+  </style>
+  <title>Login Page</title>
+</head>
+<body>
+  <div class="login-page">
+    <!-- <span class="logo">Hisaab Kitaab</span> -->
+    <div class="login-page__inner">
+      <h2 class="login-page__title">Login Page</h2>
+      <form class="login-page__form" onsubmit="handleSubmit(event)">
+        <div class="login-page__form-field">
+          <label for="username">Username:</label>
+          <input type="text" id="username" value="" onchange="updateUsername(event)">
+        </div>
+        <div class="login-page__form-field">
+          <label for="password">Password:</label>
+          <input type="password" id="password" value="" onchange="updatePassword(event)">
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      <div class="login-page__signup">
+        Do not have an account yet? <a href="./signup.html">Sign up</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="login-page__message" id="loginMessage" style="display: none;">You are logged in!</div>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const loggedIn = username === 'admin' && password === 'password';
+
+      if (loggedIn) {
+        document.getElementById('loginMessage').style.display = 'block';
+        console.log('Login successful');
+      } else {
+        document.getElementById('loginMessage').style.display = 'none';
+        console.log('Login failed');
+      }
+
+      document.getElementById('username').value = '';
+      document.getElementById('password').value = '';
+    }
+
+    function updateUsername(event) {
+      // Update username state or perform other logic
+    }
+
+    function updatePassword(event) {
+      // Update password state or perform other logic
+    }
+  </script>
+</body>
+</html>

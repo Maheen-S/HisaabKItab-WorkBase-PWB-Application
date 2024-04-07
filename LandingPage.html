@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="landingPage.css">
+    <style>
+        /* Insert the CSS code here */
+        .landing {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* background-color: #4C4272; Replace with your desired background color */
+        }
+
+        .landing .logo {
+            font-size: 80px;
+            font-weight: bold;
+            color: #7562ba;
+            margin-bottom: 1%;
+        }
+
+        .landing .buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        .landing .buttons button {
+            background-color: #563fa7;
+            color: #ffffff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100px;
+        }
+
+        .landing .buttons .link {
+            text-decoration: none;
+        }
+
+        .landing .buttons button:hover {
+            background-color: #a28fe7;
+        }
+
+        .landing img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing">
+        <img src="img4.png" alt="background">
+        <span class="logo">Hisaab Kitaab</span>
+        <a href="./login.html">
+        <div class="buttons">
+            
+                <button>User</button>
+
+                <button>Admin</button>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
